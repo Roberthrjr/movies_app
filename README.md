@@ -1,10 +1,9 @@
 # movies_app
 
-Esta aplicación es un listado de peliculas, esta realizado en Flutter.
+Esta aplicación es un listado de peliculas y descripciones de las mismas, esta principalmente realizada en Flutter, en donde se aplicaron conocimientos acerca de contrucción de StatelessWidget y StatefulWidget con diseños y animaciones incorporadas para una mejor experiencia de usuario, además de consumir de la API The Movie DataBase para la demostración de peliculas, asi como sus respectivas descripciones.
 
-Esta es la pantalla principal de la aplicación:
+Esta es la pantalla principal de la aplicación, en donde claramente se listan las películas de estreno y las más populares:
 ![Aquí la descripción de la imagen por si no carga](https://raw.githubusercontent.com/Roberthrjr/movies_app/master/assets/Sc01.png)
-En donde claramente se listan las películas de cines y populares.
 
 Esta es la segunda pantalla, en donde se muestra el banner, la portada, la descripción y los actores que participan en dicha película:
 ![Aquí la descripción de la imagen por si no carga](https://raw.githubusercontent.com/Roberthrjr/movies_app/master/assets/Sc02.png)
