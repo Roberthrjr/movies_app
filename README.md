@@ -11,10 +11,10 @@ Esta es la segunda pantalla, en donde se muestra el banner, la portada, la descr
 Por aquí la pantalla de busqueda, en donde se implemento un debouncer a partir de un Stream, para que la busqueda de cada pelicula no realice muchas peticiones HTTP
 ![Aquí la descripción de la imagen por si no carga](https://raw.githubusercontent.com/Roberthrjr/movies_app/master/assets/Sc03.png)
 
-Y por último, entramos a una de mis películas favoritas de esta año:
+Y por último, entramos a una de mis películas favoritas de este año:
 ![Aquí la descripción de la imagen por si no carga](https://raw.githubusercontent.com/Roberthrjr/movies_app/master/assets/Sc04.png)
 
-Esto sería mi primera aplicación en el framework Flutter, espero les guste y muchas gracias.
+# Esto sería mi primera aplicación en el framework Flutter, espero les guste y muchas gracias.
 
 
 
