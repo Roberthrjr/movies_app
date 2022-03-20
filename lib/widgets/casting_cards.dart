@@ -24,7 +24,6 @@ class CastingCards extends StatelessWidget {
         }
 
         final List<Cast> cast = snapshot.data!;
-
         return Container(
           margin: const EdgeInsets.only(bottom: 30),
           width: double.infinity,
