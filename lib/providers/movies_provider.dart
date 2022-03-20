@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
 import 'package:movies_app/models/models.dart';
-import 'package:movies_app/models/popular_response.dart';
 
 class MoviesProvider extends ChangeNotifier {
   String _baseUrl = 'api.themoviedb.org';
@@ -13,6 +12,8 @@ class MoviesProvider extends ChangeNotifier {
 
   List<Movie> onDisplayMovies = [];
   List<Movie> popularMovies = [];
+
+  Map<int, List<Cast>> moviesCast = {};
 
   int _popularRange = 0;
 
@@ -39,7 +40,7 @@ class MoviesProvider extends ChangeNotifier {
   getOnDisplayMovies() async {
     final jsonData = await this._getJsonData('3/movie/now_playing');
     final nowPlayingResponse = NowPlayingResponse.fromJson(jsonData);
-    //print(nowPlayingResponse.results[1].title);
+
     onDisplayMovies = nowPlayingResponse.results;
     notifyListeners();
   }
@@ -47,9 +48,19 @@ class MoviesProvider extends ChangeNotifier {
   getPopularMovies() async {
     _popularRange++;
     final jsonData = await this._getJsonData('3/movie/popular', _popularRange);
-
     final popularResponse = PopularResponse.fromJson(jsonData);
+
     popularMovies = [...popularMovies, ...popularResponse.results];
     notifyListeners();
+  }
+
+  Future<List<Cast>> getMovieCast(int movieId) async {
+    if (moviesCast.containsKey(movieId)) return moviesCast[movieId]!;
+    final jsonData = await this._getJsonData('3/movie/$movieId/credits');
+    final creditsResponse = CreditsResponse.fromJson(jsonData);
+
+    moviesCast[movieId] = creditsResponse.cast;
+
+    return creditsResponse.cast;
   }
 }
